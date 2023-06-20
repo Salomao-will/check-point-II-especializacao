@@ -1,9 +1,20 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 function App() {
 
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <h1 className='text-slate-950'>Hello World</h1>
+    }
+  ])
+
   return (
     <>
-      <h1 className='text-slate-950'>Hello World</h1>
+      <RouterProvider router={appRouter} />
     </>
   )
 }
