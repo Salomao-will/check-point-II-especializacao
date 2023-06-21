@@ -1,7 +1,12 @@
+// import { useDispatch, useSelector } from "react-redux";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
+// const dispatch = useDispatch()
+
+// const {pages} = useSelector((state) => state.pages)
 
 function App() {
 
