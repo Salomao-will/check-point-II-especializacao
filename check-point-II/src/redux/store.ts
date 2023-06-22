@@ -1,8 +1,9 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore, legacy_createStore } from "redux";
 import { pagesReducers } from "./reducers/reducer";
+import thunk from "redux-thunk";
 
 const reducer = combineReducers({
-  pages: pagesReducers,
+  cards: pagesReducers,
 });
 
-export const appStore = createStore(reducer);
+export const appStore = legacy_createStore(reducer, applyMiddleware(thunk));
