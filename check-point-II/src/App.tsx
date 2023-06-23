@@ -5,8 +5,23 @@ import { useDispatch, useSelector } from "react-redux";
 //   RouterProvider,
 // } from "react-router-dom";
 import { fetchAllCards } from "./redux/reducers/actions";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MainLayout } from "./pages/main";
+import { SectionCards } from "./components/section-cards";
+import { Favorites } from "./pages/favorites";
 
 function App() {
+
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<SectionCards />}/>
+          <Route path="/favoritos" element={<Favorites />}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 
   // const appRouter = createBrowserRouter([
   //   {
@@ -21,34 +36,34 @@ function App() {
   //   </>
   // )
 
-  const dispatch = useDispatch()
-  const {cards} = useSelector((store) => store.cards)
-  const [ page, setPage] = useState(2)
+  // const dispatch = useDispatch()
+  // const {cards} = useSelector((store) => store.cards)
+  // const [ page, setPage] = useState(2)
 
-  useEffect(() => {
-    dispatch(fetchAllCards(1))
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchAllCards(1))
+  // }, []);
 
-  console.log(page)
+  // console.log(page)
 
-  function getAllCardsByPage() {
+  // function getAllCardsByPage() {
 
-    dispatch(fetchAllCards(page))
+  //   dispatch(fetchAllCards(page))
 
-    setPage(page + 1)
+  //   setPage(page + 1)
 
-  }
+  // }
 
-  return (
-    <>
-    <button onClick={getAllCardsByPage}>proximo</button>
-    {
-      cards.map((card) => (
-        <p key={card.id}>{card.name}</p>
-      ))
-    }
-    </>
-  )
+  // return (
+  //   <>
+  //   <button onClick={getAllCardsByPage}>proximo</button>
+  //   {
+  //     cards.map((card) => (
+  //       <p key={card.id}>{card.name}</p>
+  //     ))
+  //   }
+  //   </>
+  // )
 }
 
 export default App

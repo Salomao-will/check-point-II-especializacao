@@ -4,19 +4,17 @@ const PAGE_INITIAL = {
   cards: [],
 };
 
-// type Action = {
-//   type: "ADD_CARDS" | "FAVORITE_CARD";
-//   payload?: {
-//     card: string;
-//   };
-// };
-
 export function pagesReducers(state = PAGE_INITIAL, action: Action) {
   switch(action.type){
     case "GET_ALLCARDS": {
       return {
         ...state,
-        cards: action.payload
+        cards: action.payload,
+      }
+    } case "GET_BY_NAME": {
+      return{
+        ...state,
+        cards: action.payload,
       }
     }
     default: {
