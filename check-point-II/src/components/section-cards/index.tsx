@@ -5,11 +5,11 @@ import { fetchAllCards } from "../../redux/reducers/actions"
 import { TypeResultCard } from "./types"
 import { Card } from "../card"
 
-export function SectionCards(){
+export function SectionCards() {
 
   const dispatch = useDispatch()
-  const {cards} = useSelector((store) => store.cards)
-  const [ page, setPage] = useState(2)
+  const { cards } = useSelector((store) => store.cards)
+  const [page, setPage] = useState(2)
 
   useEffect(() => {
     dispatch(fetchAllCards(1))
@@ -23,20 +23,20 @@ export function SectionCards(){
 
   }
 
-  return(
-    <div>
+  return (
+    <div >
       <BannerInput />
       <h2>Lista de personagens</h2>
       <div>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-around">
           {
             cards.map((card: TypeResultCard) => (
               <Card
                 key={card.id}
-                name = {card.name}
-                status = {card.status}
-                image = {card.image}
-                origin = {card.origin}
+                name={card.name}
+                status={card.status}
+                image={card.image}
+                origin={card.origin}
               />
             ))
           }
@@ -46,8 +46,8 @@ export function SectionCards(){
           <button
             className="flex"
             onClick={getAllCardsByPage}
-              >
-                proximo
+          >
+            proximo
           </button>
         </div>
       </div>
