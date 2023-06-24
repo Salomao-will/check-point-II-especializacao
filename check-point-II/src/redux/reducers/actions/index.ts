@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_ALLCARDS, GET_BY_NAME } from "../../action-types"
+import { GET_ALLCARDS, GET_BY_NAME, NEXT } from "../../action-types"
 import { TypeResultCard } from "../../../components/section-cards/types"
 import { Dispatch } from "redux"
 
@@ -17,12 +17,26 @@ const getCardsByNameInput = (payload: TypeResultCard) => {
   }
 }
 
+const getCardsNextPage = (payload: TypeResultCard) => {
+  return {
+    type: NEXT,
+    payload,
+  }
+}
+
+const getCardsBackPage = (payload: TypeResultCard) => {
+  return {
+    type: NEXT,
+    payload,
+  }
+}
+
 export const fetchAllCards = (page:number) => {
   return async (dispatch: Dispatch) => {
     const response = await axios.get(
       `https://rickandmortyapi.com/api/character/?page=${page}`
     )
-    dispatch(getAllCardsAction(response.data.results))
+    dispatch(getAllCardsAction(response.data))
   }
 }
 
@@ -31,6 +45,24 @@ export const fetchCardsByName = (name:string) => {
     const response = await axios.get(
       `https://rickandmortyapi.com/api/character/?name=${name}`
     )
-    dispatch(getCardsByNameInput(response.data.results))
+    dispatch(getCardsByNameInput(response.data))
+  }
+}
+
+export const fetchNextPage = (url:string) => {
+  return async (dispatch: Dispatch) => {
+    const response = await axios.get(
+      url
+    )
+    dispatch(getCardsNextPage(response.data))
+  }
+}
+
+export const fetchBackPage = (url:string) => {
+  return async (dispatch: Dispatch) => {
+    const response = await axios.get(
+      url
+    )
+    dispatch(getCardsBackPage(response.data))
   }
 }

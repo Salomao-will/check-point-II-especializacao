@@ -17,7 +17,7 @@ export function BannerInput() {
   return (
     <div className="flex justify-center items-end relative">
 
-      <img className="w-full max-h-72 object-cover" src={imgBanner} alt="Imagem de rick and morty" />
+      <img className="w-full max-h-96 object-cover" src={imgBanner} alt="Imagem de rick and morty" />
 
       <div className="flex w-full flex-col px-8  justify-between items-center gap-8 absolute mb-8 md:w-3/4 md:px-0 md:flex-row">
         <input

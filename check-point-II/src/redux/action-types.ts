@@ -1,5 +1,7 @@
 export const GET_ALLCARDS = "GET_ALLCARDS";
 export const GET_BY_NAME = 'GET_BY_NAME';
+export const NEXT = 'NEXT';
+export const BACK = 'BACK';
 
 type ActionGetAll = {
   type: 'GET_ALLCARDS',
@@ -11,5 +13,15 @@ type ActionGetByName = {
   payload: ""
 }
 
+type ActionNextPage = {
+  type: 'NEXT',
+  payload: ""
+}
 
-export type Action = ActionGetAll | ActionGetByName;
+type ActionBackPage = {
+  type: 'BACK',
+  payload: ""
+}
+
+
+export type Action = ActionGetAll | ActionGetByName | ActionNextPage | ActionBackPage  ;
