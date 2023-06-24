@@ -11,9 +11,9 @@ export function SectionCards() {
   const { cards } = useSelector((store) => store.cards)
   const [page, setPage] = useState(2)
 
-  useEffect(() => {
-    dispatch(fetchAllCards(1))
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchAllCards(1))
+  // }, []);
 
   function getAllCardsByPage() {
 

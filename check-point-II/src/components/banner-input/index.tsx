@@ -15,19 +15,23 @@ export function BannerInput() {
     setInputName(inputValue)
   }
   return (
-    <div className="">
+    <div className="flex justify-center items-end relative">
 
-      <img className="w-full h-72" src={imgBanner} alt="Imagem de rick and morty" />
+      <img className="w-full max-h-72 object-cover" src={imgBanner} alt="Imagem de rick and morty" />
 
-      <div className="absolute top-64 left-96">
+      <div className="flex w-full flex-col px-8  justify-between items-center gap-8 absolute mb-8 md:w-3/4 md:px-0 md:flex-row">
         <input
-          className="w-96 h-10 outline-none border-solid border-black border rounded-lg mr-3 p-1"
+          className=" w-full py-3 px-4 outline-none border-solid border-black border rounded-lg"
           type="text"
           value={inputName}
           onChange={searchByInputName}
           placeholder="Digite para filtrar"
         />
-        <button className="bg-red-700 text-slate-50 w-32 h-10 rounded-lg border-0">Limpar Filtro</button>
+        <button
+          className="flex bg-red-700 py-3 px-8 text-slate-50 rounded-lg border-0"
+          >
+            Limpar
+        </button>
       </div>
     </div>
   )
