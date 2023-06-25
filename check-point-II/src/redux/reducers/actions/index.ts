@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_ALLCARDS, GET_BY_NAME, NEXT } from "../../action-types"
+import { GET_ALLCARDS, GET_BY_NAME, NEXT, RESET } from "../../action-types"
 import { TypeResultCard } from "../../../components/section-cards/types"
 import { Dispatch } from "redux"
 
@@ -16,6 +16,7 @@ const getCardsByNameInput = (payload: TypeResultCard) => {
     payload,
   }
 }
+
 
 const getCardsNextPage = (payload: TypeResultCard) => {
   return {

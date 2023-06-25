@@ -1,9 +1,15 @@
 import { applyMiddleware, combineReducers, createStore, legacy_createStore } from "redux";
-import { pagesReducers } from "./reducers/reducer";
+import { PagesReducers } from "./reducers/reducer";
 import thunk from "redux-thunk";
+import { TypeResultInfo } from "../components/section-cards/types";
+import { fetchAllCards } from "./reducers/actions";
 
+export type RootState = {
+  cards: { cards: TypeResultInfo };
+}
 const reducer = combineReducers({
-  cards: pagesReducers,
+  cards: PagesReducers,
 });
 
 export const appStore = legacy_createStore(reducer, applyMiddleware(thunk));
+appStore.dispatch(fetchAllCards(1));

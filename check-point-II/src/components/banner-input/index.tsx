@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux"
-import { fetchCardsByName } from "../../redux/reducers/actions";
+import { fetchAllCards, fetchCardsByName} from "../../redux/reducers/actions";
 import imgBanner from '../../assets/rick-and-morty.jpeg'
+import { RESET } from "../../redux/action-types";
 
-export function BannerInput() {
+export function BannerInput({onReset}) {
 
   const dispatch = useDispatch();
 
@@ -14,6 +15,7 @@ export function BannerInput() {
     dispatch(fetchCardsByName(inputValue))
     setInputName(inputValue)
   }
+
   return (
     <div className="flex justify-center items-end relative">
 
@@ -29,6 +31,11 @@ export function BannerInput() {
         />
         <button
           className="flex bg-red-700 py-3 px-8 text-slate-50 rounded-lg border-0"
+          onClick={()=> {
+            dispatch(fetchAllCards(1))
+            setInputName('')
+            onReset()
+          }}
           >
             Limpar
         </button>

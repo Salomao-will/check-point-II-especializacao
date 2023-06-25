@@ -8,3 +8,8 @@ export type TypeResultCard = {
     url: string,
   }
 };
+
+export type TypeResultInfo = {
+  results:[],
+  info: {}
+}
