@@ -1,7 +1,8 @@
 import axios from "axios"
-import { GET_ALLCARDS, GET_BY_NAME, NEXT, RESET } from "../../action-types"
+import { FAV, GET_ALLCARDS, GET_BY_NAME, NEXT} from "../../action-types"
 import { TypeResultCard } from "../../../components/section-cards/types"
 import { Dispatch } from "redux"
+
 
 const getAllCardsAction = (payload: TypeResultCard) => {
   return{
@@ -9,6 +10,7 @@ const getAllCardsAction = (payload: TypeResultCard) => {
     payload,
   }
 }
+
 
 const getCardsByNameInput = (payload: TypeResultCard) => {
   return {
@@ -28,6 +30,13 @@ const getCardsNextPage = (payload: TypeResultCard) => {
 const getCardsBackPage = (payload: TypeResultCard) => {
   return {
     type: NEXT,
+    payload,
+  }
+}
+
+export const getCardsFavorites = (payload: TypeResultCard) => {
+  return {
+    type: FAV,
     payload,
   }
 }

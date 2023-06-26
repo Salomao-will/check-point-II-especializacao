@@ -1,8 +1,14 @@
+
+import { useState } from "react";
 import { TypeResultCard } from "../section-cards/types";
+import {AiOutlineStar, AiFillStar} from 'react-icons/ai'
 
 export function Card(props: TypeResultCard) {
 
-  const { name, status, image, origin } = props
+  const { name, status, image, origin, onFav, isFav } = props
+
+  const [isFavorite, setIsFavorite] = useState(isFav)
+
   return (
     <div className="border-solid border-black border rounded-lg">
       <img className="w-full rounded-lg h-80 object-cover" src={image} alt="" />
@@ -15,6 +21,14 @@ export function Card(props: TypeResultCard) {
           </div>
           <span>{origin.name}</span>
         </div>
+        <button
+          onClick={() =>
+          {onFav(), setIsFavorite(!isFavorite)}}
+            >
+              {isFavorite ?
+                <AiFillStar style={{width: "24px", height: "24px", color: "yellow"}} /> :
+                <AiOutlineStar style={{width: "24px", height: "24px", color: "yellow"}}/>}
+          </button>
       </div>
     </div>
   )

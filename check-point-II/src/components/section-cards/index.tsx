@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { BannerInput } from "../banner-input"
 import { useState } from "react"
-import { fetchBackPage, fetchNextPage } from "../../redux/reducers/actions"
+import { fetchBackPage, fetchNextPage, getCardsFavorites } from "../../redux/reducers/actions"
 import { TypeResultCard } from "./types"
 import { Card } from "../card"
 import { RootState } from "../../redux/store"
@@ -9,12 +9,15 @@ import { RootState } from "../../redux/store"
 export function SectionCards() {
 
   const dispatch = useDispatch()
-  const { cards } = useSelector((store: RootState) => store.cards)
+  const { cards, favs } = useSelector((store: RootState) => store.cards)
   const [page, setPage] = useState(1)
 
   const resetPage = () =>{
     setPage(1)
   }
+
+  console.log(cards);
+  
 
   return (
     <div>
@@ -33,6 +36,8 @@ export function SectionCards() {
                   status={card.status}
                   image={card.image}
                   origin={card.origin}
+                  isFav={card.isFav}
+                  onFav={() => dispatch(getCardsFavorites({...card, isFav: !card.isFav}))}
                 />
               ))
             }

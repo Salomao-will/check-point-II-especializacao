@@ -5,6 +5,7 @@ export const GET_BY_NAME = 'GET_BY_NAME';
 export const RESET = 'RESET';
 export const NEXT = 'NEXT';
 export const BACK = 'BACK';
+export const FAV = 'FAV';
 
 type ActionGetAll = {
   type: 'GET_ALLCARDS',
@@ -29,6 +30,10 @@ type ActionReset = {
   type: 'RESET',
   payload: TypeResultCard
 }
+type ActionFavorites = {
+  type: 'FAV',
+  payload: TypeResultCard
+}
 
 
-export type Action = ActionGetAll | ActionGetByName | ActionNextPage | ActionBackPage | ActionReset  ;
+export type Action = ActionGetAll | ActionGetByName | ActionNextPage | ActionBackPage | ActionReset | ActionFavorites  ;
