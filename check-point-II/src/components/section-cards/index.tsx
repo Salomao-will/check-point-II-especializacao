@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { BannerInput } from "../banner-input"
-import { useState } from "react"
-import { fetchBackPage, fetchNextPage, getCardsFavorites } from "../../redux/reducers/actions"
+import { useEffect, useState } from "react"
+import { fetchAllCards, fetchBackPage, fetchNextPage, getCardsFavorites } from "../../redux/reducers/actions"
 import { TypeResultCard } from "./types"
 import { Card } from "../card"
 import { RootState } from "../../redux/store"
@@ -9,15 +9,18 @@ import { RootState } from "../../redux/store"
 export function SectionCards() {
 
   const dispatch = useDispatch()
-  const { cards, favs } = useSelector((store: RootState) => store.cards)
+  const { cards, favs} = useSelector((store: RootState) => store.cards)
   const [page, setPage] = useState(1)
+
 
   const resetPage = () =>{
     setPage(1)
   }
 
-  console.log(cards);
-  
+  useEffect(() => {
+    dispatch(fetchAllCards(page))
+  }, [favs, page])
+
 
   return (
     <div>

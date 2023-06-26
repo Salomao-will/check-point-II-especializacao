@@ -9,22 +9,34 @@ export const FAV = 'FAV';
 
 type ActionGetAll = {
   type: 'GET_ALLCARDS',
-  payload: TypeResultCard
+  payload: {
+    results: [];
+    info: {}
+  }
 };
 
 type ActionGetByName = {
   type: 'GET_BY_NAME',
-  payload: TypeResultCard
+  payload: {
+    results: [];
+    info: {}
+  }
 }
 
 type ActionNextPage = {
   type: 'NEXT',
-  payload: TypeResultCard
+  payload: {
+    results: [];
+    info: {}
+  }
 }
 
 type ActionBackPage = {
   type: 'BACK',
-  payload: TypeResultCard
+  payload: {
+    results: [];
+    info: {}
+  }
 }
 type ActionReset = {
   type: 'RESET',

@@ -8,26 +8,72 @@ const PAGE_INITIAL = {
 
 export function PagesReducers(state = PAGE_INITIAL, action: Action) {
   switch(action.type){
-    case "GET_ALLCARDS": {
-      return {
-        ...state,
-        cards: action.payload
-      }
+    // case "GET_ALLCARDS": {
+    //   return {
+    //     ...state,
+    //     cards: action.payload
+    //   }
+
+      case 'GET_ALLCARDS': {
+        const { payload } = action;
+        const updatedCards = payload.results.map((card:TypeResultCard) => {
+          const isFav = state.favs.some((fav:TypeResultCard) => fav.id === card.id);
+          return { ...card, isFav};
+
+        });
+
+        return {
+          ...state,
+          cards: {
+            results: updatedCards,
+            info: payload.info
+          },
+        };
     } case "GET_BY_NAME": {
-      return{
-        ...state,
-        cards: action.payload,
-      }
+      const { payload } = action;
+        const updatedCards = payload.results.map((card:TypeResultCard) => {
+          const isFav = state.favs.some((fav:TypeResultCard) => fav.id === card.id);
+          return { ...card, isFav};
+
+        });
+
+        return {
+          ...state,
+          cards: {
+            results: updatedCards,
+            info: payload.info
+          },
+        };
     } case "NEXT": {
-      return{
-        ...state,
-        cards: action.payload,
-      }
+      const { payload } = action;
+        const updatedCards = payload.results.map((card:TypeResultCard) => {
+          const isFav = state.favs.some((fav:TypeResultCard) => fav.id === card.id);
+          return { ...card, isFav};
+
+        });
+
+        return {
+          ...state,
+          cards: {
+            results: updatedCards,
+            info: payload.info
+          },
+        };
     }case "BACK": {
-      return{
-        ...state,
-        cards: action.payload,
-      }
+      const { payload } = action;
+        const updatedCards = payload.results.map((card:TypeResultCard) => {
+          const isFav = state.favs.some((fav:TypeResultCard) => fav.id === card.id);
+          return { ...card, isFav};
+
+        });
+
+        return {
+          ...state,
+          cards: {
+            results: updatedCards,
+            info: payload.info
+          },
+        };
     }case "RESET": {
       return{
         ...state,
