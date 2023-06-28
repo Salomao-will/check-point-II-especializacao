@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux"
 import { fetchAllCards, fetchCardsByName} from "../../redux/reducers/actions";
 import imgBanner from '../../assets/rick-and-morty.jpeg'
-import { RESET } from "../../redux/action-types";
 
 export function BannerInput({onReset}) {
 

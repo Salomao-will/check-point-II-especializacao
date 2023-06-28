@@ -1,4 +1,4 @@
-import { TypeResultCard } from "../components/section-cards/types";
+import { TypeResultCard, TypeResultInfo } from "../components/section-cards/types";
 
 export const GET_ALLCARDS = "GET_ALLCARDS";
 export const GET_BY_NAME = 'GET_BY_NAME';
@@ -10,32 +10,32 @@ export const FAV = 'FAV';
 type ActionGetAll = {
   type: 'GET_ALLCARDS',
   payload: {
-    results: [];
-    info: {}
+    results: TypeResultCard[];
+    info: TypeResultInfo
   }
 };
 
 type ActionGetByName = {
   type: 'GET_BY_NAME',
   payload: {
-    results: [];
-    info: {}
+    results: TypeResultCard[];
+    info: TypeResultInfo
   }
 }
 
 type ActionNextPage = {
   type: 'NEXT',
   payload: {
-    results: [];
-    info: {}
+    results: TypeResultCard[];
+    info: TypeResultInfo
   }
 }
 
 type ActionBackPage = {
   type: 'BACK',
   payload: {
-    results: [];
-    info: {}
+    results: TypeResultCard[];
+    info: TypeResultInfo
   }
 }
 type ActionReset = {

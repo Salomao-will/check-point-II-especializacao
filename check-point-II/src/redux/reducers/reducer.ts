@@ -3,7 +3,7 @@ import { Action } from "../action-types";
 
 const PAGE_INITIAL = {
   cards: [],
-  favs:[]
+  favs: JSON.parse(localStorage.getItem('favs') || '[]'),
 };
 
 export function PagesReducers(state = PAGE_INITIAL, action: Action) {
@@ -90,6 +90,7 @@ export function PagesReducers(state = PAGE_INITIAL, action: Action) {
       } else {
         updatedFavs = [...state.favs, payload];
       }
+      localStorage.setItem('favs', JSON.stringify(updatedFavs));
 
       return {
         ...state,

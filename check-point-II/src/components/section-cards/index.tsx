@@ -21,6 +21,10 @@ export function SectionCards() {
     dispatch(fetchAllCards(page))
   }, [favs, page])
 
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+  }, [page])
+
 
   return (
     <div>

@@ -3,6 +3,7 @@ import { RootState } from "../../redux/store"
 import { Card } from "../../components/card"
 import { getCardsFavorites } from "../../redux/reducers/actions"
 import { TypeResultCard } from "../../components/section-cards/types"
+import { Empty } from "../../components/emptyFav"
 
 export function Favorites(){
 
@@ -10,12 +11,11 @@ export function Favorites(){
 
   const {favs} = useSelector((store: RootState) => store.cards)
 
-  console.log((favs));
-
   return(
     <div className="flex flex-col p-16 gap-8">
-      <h2 className="text-2xl font-semibold">favoritos</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <h2 className="text-2xl font-semibold">Somos os favoritos</h2>
+      {favs.length  ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {
           favs.map((card: TypeResultCard) => (
             <Card
@@ -29,7 +29,8 @@ export function Favorites(){
                 />
               ))
             }
-          </div>
+      </div>
+      ): <Empty />}
     </div>
   )
 }
