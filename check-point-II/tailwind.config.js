@@ -7,37 +7,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "",
+        primary: "#202329",
         fontColor: "#202329",
         secundary: "#FFFFFF",
-        greyColor: "#08C952",
-        aliveColor: "",
+        bgCard: "#F5F5F5",
+        grayColor: "#F5F5F5",
+        hoverText: "#FF9800",
+        aliveColor: "#08C952",
         deadColor: "#A1140A",
         unknowColor: "#A6A6A6",
         buttonBg: "#A1140A",
         starColor: "#FCE46D",
       },
-      fonts: {
-        h1Font: {
-          fontWeight: "bold",
-          fontSize: "2rem",
-        },
-        h2Font: {
-          fontWeight: "semibold",
-          fontSize: "1.5rem",
-        },
-        h3Font: {
-          fontWeight: "bold",
-          fontSize: "2rem",
-        },
-        pFont: "",
-        buttonFont: "",
-
-      },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"]
       }
-    },
+    }
   },
   plugins: [],
 }

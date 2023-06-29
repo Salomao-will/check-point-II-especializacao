@@ -22,14 +22,14 @@ export function BannerInput({onReset}) {
 
       <div className="flex w-full flex-col px-8  justify-between items-center gap-8 absolute mb-8 md:w-3/4 md:px-0 md:flex-row">
         <input
-          className=" w-full py-3 px-4 outline-none border-solid border-black border rounded-lg"
+          className=" w-full py-3 px-4 outline-none font-roboto text-xl text-fontColor border-solid border-2 border-primary rounded-lg placeholder:text-fontColor placeholder:opacity-50"
           type="text"
           value={inputName}
           onChange={searchByInputName}
-          placeholder="Digite para filtrar"
+          placeholder="Procure por um personagem"
         />
         <button
-          className="flex bg-red-700 py-3 px-8 text-slate-50 rounded-lg border-0"
+          className="flex bg-buttonBg py-3  px-8 font-roboto text-secundary text-xl font-normal rounded-lg border-0"
           onClick={()=> {
             dispatch(fetchAllCards(1))
             setInputName('')

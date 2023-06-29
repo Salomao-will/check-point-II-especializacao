@@ -32,7 +32,7 @@ export function SectionCards() {
         onReset={resetPage}
       />
       <div className="flex flex-col p-16 gap-8">
-        <h2 className=" text-2xl font-semibold">Lista de personagens</h2>
+        <h2 className=" text-2xl text-fontColor font-semibold">Lista de personagens</h2>
         <div className="flex flex-col gap-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {
