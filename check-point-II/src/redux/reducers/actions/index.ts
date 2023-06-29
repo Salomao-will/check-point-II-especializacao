@@ -11,12 +11,24 @@ import { TypeResultCard } from "../../../components/section-cards/types";
 import { Dispatch } from "redux";
 import { TypeResultCharacter } from "../../../pages/details/type";
 
+/**
+ * Action creator para obter todos personagens que estão na api
+ * @param payload
+ * @returns objeto para a action com o type e o payload.
+ */
+
 const getAllCardsAction = (payload: TypeResultCard) => {
   return {
     type: GET_ALLCARDS,
     payload,
   };
 };
+
+/**
+ * Action creator para obter o personagem pelo ID
+ * @param payload
+ * @returns objeto para a action com o type e o payload.
+ */
 
 const getCardsByNameInput = (payload: TypeResultCard) => {
   return {
@@ -25,12 +37,25 @@ const getCardsByNameInput = (payload: TypeResultCard) => {
   };
 };
 
+/**
+ * Action creator para paginação, para retornar os dados da proxima pagina
+ * @param payload
+ * @returns objeto para a action com o type e o payload.
+ */
+
+
 const getCardsNextPage = (payload: TypeResultCard) => {
   return {
     type: NEXT,
     payload,
   };
 };
+
+/**
+ * Action creator para paginação, para retornar os dados da pagina anterior
+ * @param payload
+ * @returns objeto para a action com o type e o payload.
+ */
 
 const getCardsBackPage = (payload: TypeResultCard) => {
   return {
@@ -39,12 +64,24 @@ const getCardsBackPage = (payload: TypeResultCard) => {
   };
 };
 
+/**
+ * Action creator para favoritar os cards, adicionando ao Array favs[]
+ * @param payload
+ * @returns objeto para a action com o type e o payload.
+ */
+
 export const getCardsFavorites = (payload: TypeResultCard) => {
   return {
     type: FAV,
     payload,
   };
 };
+
+/**
+ * Action creator para obter os detalhes no personagem seelcionado pelo id
+ * @param payload
+ * @returns objeto para a action com o type e o payload.
+ */
 
 export const getPageDetails = (payload: TypeResultCharacter) => {
   return {
