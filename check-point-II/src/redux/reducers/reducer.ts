@@ -8,6 +8,13 @@ const PAGE_INITIAL = {
   detail: {}
 };
 
+/**
+ * Função reducer para gerenciar os estados
+ * @param state
+ * @param action
+ * @returns  Retorna um nova estado após a execução de um type.
+ */
+
 export function PagesReducers(state = PAGE_INITIAL, action: Action) {
   switch(action.type){
     // case "GET_ALLCARDS": {

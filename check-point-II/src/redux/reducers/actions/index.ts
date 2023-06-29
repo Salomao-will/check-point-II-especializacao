@@ -90,6 +90,12 @@ export const getPageDetails = (payload: TypeResultCharacter) => {
   };
 };
 
+/**
+ * Função fetch async para obter os dados da api com base no numero da pagina.
+ * @param page
+ * @returns Função async com dispatch para ação de buscar todos.
+ */
+
 export const fetchAllCards = (page: number) => {
   return async (dispatch: Dispatch) => {
     const response = await axios.get(
@@ -98,6 +104,12 @@ export const fetchAllCards = (page: number) => {
     dispatch(getAllCardsAction(response.data));
   };
 };
+
+/**
+ * função fetch async para obter os dados api com filtro de nomes
+ * @param name
+ * @returns Função async com dispatch para ação de filtro por nome.
+ */
 
 export const fetchCardsByName = (name: string) => {
   return async (dispatch: Dispatch) => {
@@ -108,12 +120,24 @@ export const fetchCardsByName = (name: string) => {
   };
 };
 
+/**
+ * Função fetch async para obter dados da proxima pagina da api, com base na url informado em {info -> next}
+ * @param url
+ * @returns Função async com ação de next page contendo os dados da pagina.
+ */
+
 export const fetchNextPage = (url: string) => {
   return async (dispatch: Dispatch) => {
     const response = await axios.get(url);
     dispatch(getCardsNextPage(response.data));
   };
 };
+
+/**
+ * Função fetch async para obter dados da proxima pagina da api, com base na url informado em {info -> prev}
+ * @param url
+ * @returns Função async com ação de back page contendo os dados da pagina.
+ */
 
 export const fetchBackPage = (url: string) => {
   return async (dispatch: Dispatch) => {
@@ -122,6 +146,11 @@ export const fetchBackPage = (url: string) => {
   };
 };
 
+/**
+ * Função fetch async para obter dados da api com base no id do usuario.
+ * @param id
+ * @returns Função async para ação de busca do personagem com base no id da api.
+ */
 export const fetchSingleCharacter = (id: number) => {
   return async (dispatch: Dispatch) => {
     const response = await axios.get(
