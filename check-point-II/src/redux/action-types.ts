@@ -2,6 +2,7 @@ import {
   TypeResultCard,
   TypeResultInfo,
 } from "../components/section-cards/types";
+import { TypeResultCharacter } from "../pages/details/type";
 
 export const GET_ALLCARDS = "GET_ALLCARDS";
 export const GET_BY_NAME = "GET_BY_NAME";
@@ -53,7 +54,9 @@ type ActionFavorites = {
 
 type ActionDetails = {
   type: "DETAILS";
-  payload: TypeResultCard;
+  payload: TypeResultCharacter;
+
+  // Alterado o type para TypeResultCharacter
 };
 
 export type Action =

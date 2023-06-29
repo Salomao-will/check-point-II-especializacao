@@ -9,6 +9,7 @@ import {
 } from "../../action-types";
 import { TypeResultCard } from "../../../components/section-cards/types";
 import { Dispatch } from "redux";
+import { TypeResultCharacter } from "../../../pages/details/type";
 
 const getAllCardsAction = (payload: TypeResultCard) => {
   return {
@@ -45,7 +46,7 @@ export const getCardsFavorites = (payload: TypeResultCard) => {
   };
 };
 
-export const getPageDetails = (payload: TypeResultCard) => {
+export const getPageDetails = (payload: TypeResultCharacter) => {
   return {
     type: DETAILS,
     payload,
@@ -84,10 +85,10 @@ export const fetchBackPage = (url: string) => {
   };
 };
 
-export const fetchSingleCharacter = (person: number) => {
+export const fetchSingleCharacter = (id: number) => {
   return async (dispatch: Dispatch) => {
     const response = await axios.get(
-      `https://rickandmortyapi.com/api/character/${person}`
+      `https://rickandmortyapi.com/api/character/${id}`
     );
     dispatch(getPageDetails(response.data));
   };

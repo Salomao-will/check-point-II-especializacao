@@ -9,6 +9,7 @@ export type TypeResultCard = {
   }
   isFav: boolean,
   onFav: () => void,
+  onDetail: () => void
 };
 
 export type TypeResultInfo = {
