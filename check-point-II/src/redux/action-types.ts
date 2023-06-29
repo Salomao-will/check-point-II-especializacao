@@ -1,51 +1,66 @@
-import { TypeResultCard, TypeResultInfo } from "../components/section-cards/types";
+import {
+  TypeResultCard,
+  TypeResultInfo,
+} from "../components/section-cards/types";
 
 export const GET_ALLCARDS = "GET_ALLCARDS";
-export const GET_BY_NAME = 'GET_BY_NAME';
-export const RESET = 'RESET';
-export const NEXT = 'NEXT';
-export const BACK = 'BACK';
-export const FAV = 'FAV';
+export const GET_BY_NAME = "GET_BY_NAME";
+export const RESET = "RESET";
+export const NEXT = "NEXT";
+export const BACK = "BACK";
+export const FAV = "FAV";
+export const DETAILS = "DETAILS";
 
 type ActionGetAll = {
-  type: 'GET_ALLCARDS',
+  type: "GET_ALLCARDS";
   payload: {
     results: TypeResultCard[];
-    info: TypeResultInfo
-  }
+    info: TypeResultInfo;
+  };
 };
 
 type ActionGetByName = {
-  type: 'GET_BY_NAME',
+  type: "GET_BY_NAME";
   payload: {
     results: TypeResultCard[];
-    info: TypeResultInfo
-  }
-}
+    info: TypeResultInfo;
+  };
+};
 
 type ActionNextPage = {
-  type: 'NEXT',
+  type: "NEXT";
   payload: {
     results: TypeResultCard[];
-    info: TypeResultInfo
-  }
-}
+    info: TypeResultInfo;
+  };
+};
 
 type ActionBackPage = {
-  type: 'BACK',
+  type: "BACK";
   payload: {
     results: TypeResultCard[];
-    info: TypeResultInfo
-  }
-}
+    info: TypeResultInfo;
+  };
+};
 type ActionReset = {
-  type: 'RESET',
-  payload: TypeResultCard
-}
+  type: "RESET";
+  payload: TypeResultCard;
+};
 type ActionFavorites = {
-  type: 'FAV',
-  payload: TypeResultCard
-}
+  type: "FAV";
+  payload: TypeResultCard;
+};
 
+type ActionDetails = {
+  type: "DETAILS";
+  payload: TypeResultCard;
+};
 
-export type Action = ActionGetAll | ActionGetByName | ActionNextPage | ActionBackPage | ActionReset | ActionFavorites  ;
+export type Action =
+  | ActionGetAll
+  | ActionGetByName
+  | ActionNextPage
+  | ActionBackPage
+  | ActionReset
+  | ActionFavorites
+  | ActionDetails;
