@@ -11,8 +11,10 @@ export function Card(props: TypeResultCard) {
   const [isFavorite, setIsFavorite] = useState(isFav)
 
   return (
-    <Link to={"/details"} className="border-solid border-black border rounded-lg" onClick={onDetail}>
-      <img className="w-full rounded-lg h-80 object-cover" src={image} alt="" />
+    <div className="border-solid border-black border rounded-lg">
+      <Link to={"/details"} onClick={onDetail}>
+        <img className="w-full rounded-lg h-80 object-cover" src={image} alt=""/>
+      </Link>
       <div className="py-8 px-4">
         <h2 className=" text-xl font-semibold">{name}</h2>
         <div className="flex flex-col">
@@ -29,8 +31,8 @@ export function Card(props: TypeResultCard) {
               {isFavorite ?
                 <AiFillStar style={{width: "24px", height: "24px", color: "yellow"}} /> :
                 <AiOutlineStar style={{width: "24px", height: "24px", color: "yellow"}}/>}
-          </button>
+        </button>
       </div>
-    </Link>
+    </div>
   )
 }
