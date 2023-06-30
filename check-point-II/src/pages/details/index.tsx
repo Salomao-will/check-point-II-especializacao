@@ -17,14 +17,14 @@ export function Details() {
             className="w-80 h-80 rounded-s-lg"
           />
           <div className=' p-4 flex flex-col gap-2 '>
-            <p>Personagem: {detail.name}</p>
-            <p>Espécie: {detail.species}</p>
-            <p>Status: {detail.status}</p>
-            <p>Origem: {detail.origin?.name}</p>
-            <p>Localização: {detail.location?.name}</p>
-            <ul className='w-96 h-24 flex flex-wrap'>Lista de episódios: {detail?.episode?.map((list: string) => {
+            <strong>Personagem: <span className='text-slate-400'>{detail.name}</span></strong>
+            <strong>Espécie: <span className='text-slate-400'>{detail.species}</span></strong>
+            <strong>Status: <span className='text-slate-400'>{detail.status}</span></strong>
+            <strong>Origem: <span className='text-slate-400'>{detail.origin?.name}</span></strong>
+            <strong>Localização: <span className='text-slate-400'>{detail.location?.name}</span></strong>
+            <ul className='w-96 h-24 flex flex-wrap'><strong>Lista de episódios:</strong> {detail?.episode?.map((list: string) => {
               const id = list.split('/').slice(-1)[0];
-              return <li className='list-none mr-1' key={id}>{`${id},`}</li>
+              return <li className='list-none mr-1 ml-2 text-slate-400 font-bold' key={id}>{`${id}`}</li>
             })}</ul>
           </div>
         </div>
