@@ -1,26 +1,22 @@
-// import { useDispatch, useSelector } from "react-redux";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MainLayout } from "./pages/main";
+import { SectionCards } from "./components/section-cards";
+import { Favorites } from "./pages/favorites";
+import { Details } from "./pages/details";
 
-// const dispatch = useDispatch()
-
-// const {pages} = useSelector((state) => state.pages)
 
 function App() {
 
-  const appRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: <h1 className='text-slate-950'>Hello World</h1>
-    }
-  ])
-
   return (
-    <>
-      <RouterProvider router={appRouter} />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<SectionCards />} />
+          <Route path="/favoritos" element={<Favorites />} />
+          <Route path="/details" element={<Details />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
