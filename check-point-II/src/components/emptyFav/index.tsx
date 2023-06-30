@@ -7,7 +7,7 @@ export function Empty(){
       <div className='flex flex-col items-center gap-4'>
         <img src={imgEmpty} alt="" />
         <p className=' text-xl font-normal text-black'>Você ainda não possui nenhum card favorito!!!</p>
-        <Link className=' text-xl font-semibold text-black' to={"/"}>Clique e seus favoritos.</Link>
+        <Link className=' text-xl font-semibold text-black' to={"/"}>Clique para voltar aos personagens.</Link>
       </div>
     </div>
   )

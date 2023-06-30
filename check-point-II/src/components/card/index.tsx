@@ -29,8 +29,8 @@ export function Card(props: TypeResultCard) {
           {onFav(), setIsFavorite(!isFavorite)}}
             >
               {isFavorite ?
-                <AiFillStar style={{width: "24px", height: "24px", color: "yellow"}} /> :
-                <AiOutlineStar style={{width: "24px", height: "24px", color: "yellow"}}/>}
+                <AiFillStar style={{width: "30px", height: "30px", color: "yellow"}} /> :
+                <AiOutlineStar style={{width: "30px", height: "30px", color: "yellow"}}/>}
         </button>
       </div>
     </div>
